@@ -17,7 +17,7 @@ jobs:
         run: npm install -g wrangler
 
       - name: Upload sky.txt to KV
-        run: wrangler kv:key put SKY sky.txt --path=sky.txt
+        run: wrangler kv:key put 7fdde41a153649cf8fbbef354f1641f3 sky.txt --path ./sky.txt
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
