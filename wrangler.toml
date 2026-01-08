@@ -1,0 +1,7 @@
+name = "subtran"                    # 随你起
+main = "worker.js"           # ← 指向真实入口
+compatibility_date = "2026-01-08"
+
+kv_namespaces = [
+{ binding = "SKY", id = "7fdde41a153649cf8fbbef354f1641f3" }
+]

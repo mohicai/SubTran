@@ -1,0 +1,23 @@
+name: Sync sky.txt to KV
+
+on:
+  push:
+    paths:
+      - "sky.txt"
+      - ".github/workflows/Kv.yml"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Wrangler
+        run: npm install -g wrangler
+
+      - name: Upload sky.txt to KV
+        run: wrangler kv:key put SKY sky.txt --path=sky.txt
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
