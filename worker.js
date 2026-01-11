@@ -24,7 +24,7 @@ export default {
       return new Response("无法访问订阅链接", { status: 500 });
     }
     
-    if (!resp.ok) {
+    if (resp.ok) {
       await sendPush(env, `订阅链接返回异常状态码：${resp.status}`);
       return new Response("订阅源异常", { status: 500 });
     }
